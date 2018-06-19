@@ -14,6 +14,7 @@ FUNCTION[10]="insJhipster"
 FUNCTION[11]="insLatex"
 FUNCTION[12]="insGimp"
 FUNCTION[13]="insSafeeyes"
+FUNCTION[14]="insVim"
 declare -a PROGRAMS
 PROGRAMS[1]="aptitude"
 PROGRAMS[2]="curl"
@@ -28,6 +29,7 @@ PROGRAMS[10]="jhipster"
 PROGRAMS[11]="latex env"
 PROGRAMS[12]="gimp"
 PROGRAMS[13]="safeeyes"
+PROGRAMS[14]="vim"
 
 function insAptitude {
     sudo apt-get install aptitude
@@ -74,8 +76,11 @@ function insSafeeyes {
     sudo aptitude update
     sudo aptitude install safeeyes
 }
+function insVim {
+    sudo vim vim-gtk3
+}
 
-for ((i=1;i<=13;i++))
+for ((i=1;i<=14;i++))
 do
     echo Install ${PROGRAMS[$i]}? [ynq]
     read ins
