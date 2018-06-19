@@ -15,6 +15,7 @@ FUNCTION[11]="insLatex"
 FUNCTION[12]="insGimp"
 FUNCTION[13]="insSafeeyes"
 FUNCTION[14]="insVim"
+FUNCTION[15]="insHeroku"
 declare -a PROGRAMS
 PROGRAMS[1]="aptitude"
 PROGRAMS[2]="curl"
@@ -30,6 +31,7 @@ PROGRAMS[11]="latex env"
 PROGRAMS[12]="gimp"
 PROGRAMS[13]="safeeyes"
 PROGRAMS[14]="vim"
+PROGRAMS[15]="heroku"
 
 function insAptitude {
     sudo apt-get install aptitude
@@ -79,8 +81,11 @@ function insSafeeyes {
 function insVim {
     sudo vim vim-gtk3
 }
+function insHeroku {
+    curl https://cli-assets.heroku.com/install.sh | sh
+}
 
-for ((i=1;i<=14;i++))
+for ((i=1;i<=15;i++))
 do
     echo Install ${PROGRAMS[$i]}? [ynq]
     read ins
