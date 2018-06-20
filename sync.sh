@@ -30,7 +30,7 @@ elif [[ $1 = "datasets" ]]; then
 elif [[ $1 = "mgr" ]]; then
     syncMgr
 else
-    echo syntax: bash syncdown.sh catalog -d/u
+    echo syntax: bash sync.sh catalog -d/u
     echo catalog is one of following:
     echo ci - classifier integration results
     echo praca - katalog z dokumentami do pracy
