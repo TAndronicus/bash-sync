@@ -47,7 +47,12 @@ function insCCPP {
     sudo aptitude install gcc g++
 }
 function insPython {
-    sudo aptitude install python3, python3-dev, spyder3
+    cd
+    curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+    echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+    echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bashrc
+    sudo aptitude install spyder3
 }
 function insR {
     sudo aptitude install r-base, r-base-dev
