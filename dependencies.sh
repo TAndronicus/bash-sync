@@ -17,6 +17,7 @@ FUNCTION[13]="insSafeeyes"
 FUNCTION[14]="insVim"
 FUNCTION[15]="insHeroku"
 FUNCTION[16]="insFuse"
+FUNCTION[17]="insSnap"
 declare -a PROGRAMS
 PROGRAMS[1]="aptitude"
 PROGRAMS[2]="curl"
@@ -34,6 +35,7 @@ PROGRAMS[13]="safeeyes"
 PROGRAMS[14]="vim"
 PROGRAMS[15]="heroku"
 PROGRAMS[16]="fuse"
+PROGRAMS[17]="snap"
 
 function insAptitude {
     sudo apt-get install aptitude
@@ -89,8 +91,11 @@ function insHeroku {
 function insFuse {
     sudo aptitude install fuse fuse-emulator-gtk
 }
+function insSnap {
+    sudo aptitude install snapd
+}
 
-for ((i=1;i<=16;i++))
+for ((i=1;i<=17;i++))
 do
     echo Install ${PROGRAMS[$i]}? [ynq]
     read ins
