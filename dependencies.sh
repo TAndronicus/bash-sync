@@ -59,9 +59,11 @@ function insR {
 }
 function insSdkman {
     curl -s "https://get.sdkman.io" | bash
+    . ~/.bashrc
 }
 function insNvmNode {
     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+    . ~/.bashrc
     sudo nvm install node --lts
 }
 function insPostgres {
