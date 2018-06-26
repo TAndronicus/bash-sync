@@ -105,7 +105,7 @@ function insSnap {
     sudo aptitude install snapd
 }
 
-for ((i=1;i<=17;i++))
+for ((i=1;i<=${#PROGRAMS[@]};i++))
 do
     printf "\nInstall ${PROGRAMS[$i]}? [ynq]"
     read ins
