@@ -104,7 +104,7 @@ function insSnap {
 
 for ((i=1;i<=17;i++))
 do
-    echo Install ${PROGRAMS[$i]}? [ynq]
+    printf "\nInstall ${PROGRAMS[$i]}? [ynq]"
     read ins
     while [ $ins != 'y' ] && [ $ins != 'n' ] && [ $ins != 'q' ]
     do
