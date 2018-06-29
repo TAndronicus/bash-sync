@@ -18,6 +18,7 @@ FUNCTION[14]="insVim"
 FUNCTION[15]="insHeroku"
 FUNCTION[16]="insFuse"
 FUNCTION[17]="insSnap"
+FUNCTION[18]="insCockpit"
 declare -a PROGRAMS
 PROGRAMS[1]="aptitude"
 PROGRAMS[2]="curl"
@@ -36,6 +37,7 @@ PROGRAMS[14]="vim"
 PROGRAMS[15]="heroku"
 PROGRAMS[16]="fuse"
 PROGRAMS[17]="snap"
+PROGRAMS[18]="cockpit"
 
 function insAptitude {
     sudo apt-get install aptitude
@@ -103,6 +105,9 @@ function insFuse {
 }
 function insSnap {
     sudo aptitude install snapd
+}
+function insCockpit {
+    sudo aptitude install cockpit cockpit-bridge cockpit-dashboard cockpit-docker cockpit-machines cockpit-networkmanager cockpit-ssh cockpit-system cockpit-ws cockpit-storaged
 }
 
 for ((i=1;i<=${#PROGRAMS[@]};i++))
