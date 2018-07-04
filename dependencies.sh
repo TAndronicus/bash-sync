@@ -80,7 +80,7 @@ function insJhipster {
     yarn global add generator-jhipster
 }
 function insLatex {
-    sudo aptitude install texmaker texlive-base texlive texlive-lang-polish texlive-fonts-extra texlive-latex-extra tex-gyre
+    sudo aptitude install texmaker texlive-base texlive texlive-lang-polish texlive-fonts-extra texlive-latex-extra tex-gyre texlive-xetex texlive-math-extra
 }
 function insGimp {
     sudo aptitude install gimp
