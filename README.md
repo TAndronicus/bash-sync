@@ -19,6 +19,12 @@ Simply type:
 
     bash -c "$(curl -s https://raw.githubusercontent.com/TAndronicus/bash-sync/master/dependencies.sh)"
     
-and follow instructions. Type in "y" if you want to install tool, "n" if you do not and "q" if you want to quit the program.
-There is no guarante that the program will work fine after you refuse to install anything. 
-Example: first tools to install are aptitude and curl that are used for installation later on.
+for installation script and:
+
+    bash -c "$(curl -s https://raw.githubusercontent.com/TAndronicus/bash-sync/master/update-packages.sh)"
+    
+for packages update and follow instructions. Type in "y" if you want to install tool, "n" if you do not and "q" if you want to quit the program.
+
+### Caution
+
+There is no guarante that the program will work fine after you refuse to install any of the previous ones. Example: first tools to install are aptitude and curl that are used for installation later on.
