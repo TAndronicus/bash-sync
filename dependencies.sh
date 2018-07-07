@@ -72,7 +72,9 @@ function insNvmNode {
     . ~/.bashrc
 }
 function insPostgres {
-    sudo aptitude install postgresql, pgadmin3
+    echo "deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main" | sudo tee /etc/apt/sources.list.d/postgres.list
+    wget -O- https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+    sudo aptitude install postgresql-10, pgadmin3
 }
 function insYarn {
     curl -o- -L https://yarnpkg.com/install.sh | bash
@@ -101,10 +103,15 @@ function insHeroku {
     curl https://cli-assets.heroku.com/install.sh | sh
 }
 function insCockpit {
+    echo "deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted universe multiverse" | sudo tee /etc/apt/sources.list.d/cockpit.list
+    sudo aptitude update
     sudo aptitude install cockpit cockpit-bridge cockpit-dashboard cockpit-docker cockpit-machines cockpit-networkmanager cockpit-ssh cockpit-system cockpit-ws cockpit-storaged
 }
 function insErlang {
-    echo Not added yet
+    echo "deb https://packages.erlang-solutions.com/ubuntu trusty contrib" | sudo tee /etc/apt/sources.list.d/erlang.list
+    wget -O- https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc | sudo apt-key add -
+    sudo aptitude update
+    sudo aptitude install esl-erlang
 }
 function insRabbitMQ {
     echo "deb https://dl.bintray.com/rabbitmq/debian xenial main" | sudo tee /etc/apt/sources.list.d/bintray.rabbitmq.list
