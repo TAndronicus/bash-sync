@@ -17,6 +17,8 @@ FUNCTION[13]="insSafeeyes"
 FUNCTION[14]="insVim"
 FUNCTION[15]="insHeroku"
 FUNCTION[16]="insCockpit"
+FUNCTION[17]="insErlang"
+FUNCTION[18]="insRabbitMQ"
 declare -a PROGRAMS
 PROGRAMS[1]="aptitude"
 PROGRAMS[2]="curl"
@@ -34,6 +36,8 @@ PROGRAMS[13]="safeeyes"
 PROGRAMS[14]="vim"
 PROGRAMS[15]="heroku"
 PROGRAMS[16]="cockpit"
+PROGRAMS[17]="erlang"
+PROGRAMS[18]="rabbitMQ"
 
 function insAptitude {
     sudo apt-get install aptitude
@@ -98,6 +102,15 @@ function insHeroku {
 }
 function insCockpit {
     sudo aptitude install cockpit cockpit-bridge cockpit-dashboard cockpit-docker cockpit-machines cockpit-networkmanager cockpit-ssh cockpit-system cockpit-ws cockpit-storaged
+}
+function insErlang {
+    echo Not added yet
+}
+function insRabbitMQ {
+    echo "deb https://dl.bintray.com/rabbitmq/debian xenial main" | sudo tee /etc/apt/sources.list.d/bintray.rabbitmq.list
+    wget -O- https://dl.bintray.com/rabbitmq/Keys/rabbitmq-release-signing-key.asc | sudo apt-key add -
+    sudo aptitude update
+    sudo aptitude install rabbitmq-server
 }
 
 # Removed
