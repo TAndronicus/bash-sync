@@ -20,6 +20,7 @@ FUNCTION[16]="insCockpit"
 FUNCTION[17]="insErlang"
 FUNCTION[18]="insRabbitMQ"
 FUNCTION[19]="insPostgres"
+FUNCTION[20]="insWine"
 declare -a PROGRAMS
 PROGRAMS[1]="aptitude"
 PROGRAMS[2]="curl"
@@ -40,6 +41,7 @@ PROGRAMS[16]="cockpit"
 PROGRAMS[17]="erlang"
 PROGRAMS[18]="rabbitMQ"
 PROGRAMS[19]="postgres"
+PROGRAMS[20]="wine"
 
 function insAptitude {
     sudo apt-get install aptitude
@@ -118,6 +120,14 @@ function insRabbitMQ {
     wget -O- https://dl.bintray.com/rabbitmq/Keys/rabbitmq-release-signing-key.asc | sudo apt-key add -
     sudo aptitude update
     sudo aptitude install rabbitmq-server
+}
+function insWine {
+    sudo dpkg --add-architecture i386
+    wget -nc https://dl.winehq.org/wine-builds/Release.key
+    sudo apt-key add Release.key
+    sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ xenial main'
+    sudo aptitude update
+    sudo aptitude install winehq-devel
 }
 
 # Removed
