@@ -19,6 +19,7 @@ FUNCTION[15]="insHeroku"
 FUNCTION[16]="insCockpit"
 FUNCTION[17]="insErlang"
 FUNCTION[18]="insRabbitMQ"
+FUNCTION[19]="insPostgres"
 declare -a PROGRAMS
 PROGRAMS[1]="aptitude"
 PROGRAMS[2]="curl"
@@ -38,6 +39,7 @@ PROGRAMS[15]="heroku"
 PROGRAMS[16]="cockpit"
 PROGRAMS[17]="erlang"
 PROGRAMS[18]="rabbitMQ"
+PROGRAMS[19]="postgres"
 
 function insAptitude {
     sudo apt-get install aptitude
@@ -72,9 +74,7 @@ function insNvmNode {
     . ~/.bashrc
 }
 function insPostgres {
-    echo "deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main" | sudo tee /etc/apt/sources.list.d/postgres.list
-    wget -O- https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-    sudo aptitude install postgresql-10, pgadmin3
+    sudo aptitude install postgresql, pgadmin3
 }
 function insYarn {
     curl -o- -L https://yarnpkg.com/install.sh | bash
