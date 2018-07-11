@@ -22,6 +22,7 @@ FUNCTION[18]="insRabbitMQ"
 FUNCTION[19]="insPostgres"
 FUNCTION[20]="insWine"
 FUNCTION[21]="insTlp"
+FUNCTION[22]="insTlpThinkPad"
 declare -a PROGRAMS
 PROGRAMS[1]="aptitude"
 PROGRAMS[2]="curl"
@@ -44,6 +45,7 @@ PROGRAMS[18]="rabbitMQ"
 PROGRAMS[19]="postgres"
 PROGRAMS[20]="wine"
 PROGRAMS[21]="tlp"
+FUNCTION[22]="tlpThinkPad"
 
 function insAptitude {
     sudo apt-get install aptitude
@@ -134,7 +136,10 @@ function insWine {
 function insTlp {
     sudo add-apt-repository ppa:linrunner/tlp
     sudo aptitude update
-    sudo aptitude install tlp tlp-rdw tp-smapi-dkms acpi-call-dkms
+    sudo aptitude install tlp tlp-rdw
+}
+function insTlpThinkPad {
+    sudo aptitude install tp-smapi-dkms acpi-call-dkms
 }
 
 # Removed
