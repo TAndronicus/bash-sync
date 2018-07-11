@@ -21,6 +21,7 @@ FUNCTION[17]="insErlang"
 FUNCTION[18]="insRabbitMQ"
 FUNCTION[19]="insPostgres"
 FUNCTION[20]="insWine"
+FUNCTION[21]="insTlp"
 declare -a PROGRAMS
 PROGRAMS[1]="aptitude"
 PROGRAMS[2]="curl"
@@ -42,6 +43,7 @@ PROGRAMS[17]="erlang"
 PROGRAMS[18]="rabbitMQ"
 PROGRAMS[19]="postgres"
 PROGRAMS[20]="wine"
+PROGRAMS[21]="tlp"
 
 function insAptitude {
     sudo apt-get install aptitude
@@ -128,6 +130,11 @@ function insWine {
     sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ xenial main'
     sudo aptitude update
     sudo aptitude install winehq-devel
+}
+function insTlp {
+    sudo add-apt-repository ppa:linrunner/tlp
+    sudo aptitude update
+    sudo aptitude install tlp tlp-rdw tp-smapi-dkms acpi-call-dkms
 }
 
 # Removed
