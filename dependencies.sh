@@ -23,6 +23,7 @@ FUNCTION[19]="insPostgres"
 FUNCTION[20]="insWine"
 FUNCTION[21]="insTlp"
 FUNCTION[22]="insTlpThinkPad"
+FUNCTION[23]="insNotepadqq"
 declare -a PROGRAMS
 PROGRAMS[1]="aptitude"
 PROGRAMS[2]="curl"
@@ -46,6 +47,7 @@ PROGRAMS[19]="postgres"
 PROGRAMS[20]="wine"
 PROGRAMS[21]="tlp"
 FUNCTION[22]="tlpThinkPad"
+FUNCTION[23]="notepadqq"
 
 function insAptitude {
     sudo apt-get install aptitude
@@ -140,6 +142,11 @@ function insTlp {
 }
 function insTlpThinkPad {
     sudo aptitude install tp-smapi-dkms acpi-call-dkms
+}
+function insNotepadqq {
+    sudo add-apt-repository ppa:notepadqq-team/notepadqq
+    sudo apt-get update
+    sudo apt-get install notepadqq
 }
 
 # Removed
