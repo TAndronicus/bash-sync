@@ -24,6 +24,7 @@ FUNCTION[20]="insWine"
 FUNCTION[21]="insTlp"
 FUNCTION[22]="insTlpThinkPad"
 FUNCTION[23]="insNotepadqq"
+FUNCTION[24]="insLyx"
 declare -a PROGRAMS
 PROGRAMS[1]="aptitude"
 PROGRAMS[2]="curl"
@@ -48,6 +49,7 @@ PROGRAMS[20]="wine"
 PROGRAMS[21]="tlp"
 FUNCTION[22]="tlpThinkPad"
 FUNCTION[23]="notepadqq"
+FUNCTION[24]="lyx"
 
 function insAptitude {
     sudo apt-get install aptitude
@@ -145,8 +147,13 @@ function insTlpThinkPad {
 }
 function insNotepadqq {
     sudo add-apt-repository ppa:notepadqq-team/notepadqq
-    sudo apt-get update
-    sudo apt-get install notepadqq
+    sudo aptitude update
+    sudo aptitude install notepadqq
+}
+function insLyx {
+    sudo add-apt-repository ppa:lyx-devel/release
+    sudo aptitude update
+    sudo aptitude install lyx
 }
 
 # Removed
