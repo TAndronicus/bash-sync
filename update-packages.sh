@@ -3,15 +3,21 @@
 declare -a FUNCTION
 FUNCTION[1]="updPip"
 FUNCTION[2]="updYarn"
+FUNCTION[3]="updSdkman"
 declare -a PROGRAMS
 PROGRAMS[1]="pip"
 PROGRAMS[2]="yarn"
+PROGRAMS[3]="sdkman"
 
 function updPip {
+	pip install --upgrade pip
     pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
 }
 function updYarn {
     yarn global upgrade
+}
+function updSdkman {
+    eval "sdk update"
 }
 
 for ((i=1;i<=${#PROGRAMS[@]};i++))
