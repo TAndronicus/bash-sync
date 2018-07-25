@@ -16,15 +16,16 @@ FUNCTION[12]="insGimp"
 FUNCTION[13]="insSafeeyes"
 FUNCTION[14]="insVim"
 FUNCTION[15]="insHeroku"
-FUNCTION[16]="insCockpit"
-FUNCTION[17]="insErlang"
-FUNCTION[18]="insRabbitMQ"
-FUNCTION[19]="insPostgres"
-FUNCTION[20]="insWine"
-FUNCTION[21]="insTlp"
-FUNCTION[22]="insTlpThinkPad"
-FUNCTION[23]="insNotepadqq"
-FUNCTION[24]="insLyx"
+FUNCTION[16]="insDocker"
+FUNCTION[17]="insCockpit"
+FUNCTION[18]="insErlang"
+FUNCTION[19]="insRabbitMQ"
+FUNCTION[20]="insPostgres"
+FUNCTION[21]="insWine"
+FUNCTION[22]="insTlp"
+FUNCTION[23]="insTlpThinkPad"
+FUNCTION[24]="insNotepadqq"
+FUNCTION[25]="insLyx"
 
 prefix="ins"
 
@@ -88,6 +89,10 @@ function insVim {
 }
 function insHeroku {
     curl https://cli-assets.heroku.com/install.sh | sh
+}
+function insDocker {
+    sudo aptitude install docker docker.io
+    sudo usermod -aG docker $USER
 }
 function insCockpit {
     echo "deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted universe multiverse" | sudo tee /etc/apt/sources.list.d/cockpit.list
