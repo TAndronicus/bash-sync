@@ -26,6 +26,7 @@ FUNCTION[22]="insTlp"
 FUNCTION[23]="insTlpThinkPad"
 FUNCTION[24]="insNotepadqq"
 FUNCTION[25]="insLyx"
+FUNCTION[26]="insStacer"
 
 prefix="ins"
 
@@ -136,6 +137,11 @@ function insLyx {
     sudo add-apt-repository ppa:lyx-devel/release
     sudo aptitude update
     sudo aptitude install lyx
+}
+function insStacer {
+    sudo add-apt-repository ppa:oguzhaninan/stacer
+    sudo aptitude update
+    sudo aptitude install stacer
 }
 
 # Removed
