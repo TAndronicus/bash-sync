@@ -25,31 +25,8 @@ FUNCTION[21]="insTlp"
 FUNCTION[22]="insTlpThinkPad"
 FUNCTION[23]="insNotepadqq"
 FUNCTION[24]="insLyx"
-declare -a PROGRAMS
-PROGRAMS[1]="aptitude"
-PROGRAMS[2]="curl"
-PROGRAMS[3]="C and C++ env"
-PROGRAMS[4]="python env"
-PROGRAMS[5]="R env"
-PROGRAMS[6]="sdkman"
-PROGRAMS[7]="nvm & nodejs --lts"
-PROGRAMS[8]="yarn"
-PROGRAMS[9]="yeoman"
-PROGRAMS[10]="jhipster"
-PROGRAMS[11]="latex env"
-PROGRAMS[12]="gimp"
-PROGRAMS[13]="safeeyes"
-PROGRAMS[14]="vim"
-PROGRAMS[15]="heroku"
-PROGRAMS[16]="cockpit"
-PROGRAMS[17]="erlang"
-PROGRAMS[18]="rabbitMQ"
-PROGRAMS[19]="postgres"
-PROGRAMS[20]="wine"
-PROGRAMS[21]="tlp"
-FUNCTION[22]="tlpThinkPad"
-FUNCTION[23]="notepadqq"
-FUNCTION[24]="lyx"
+
+prefix="ins"
 
 function insAptitude {
     sudo apt-get install aptitude
@@ -165,16 +142,17 @@ function insSnap {
 }
 
 
-for ((i=1;i<=${#PROGRAMS[@]};i++))
+for ((i=1;i<=${#FUNCTION[@]};i++))
 do
-    printf "\nInstall ${PROGRAMS[$i]}? [ynq]"
+    NAME=$(echo ${FUNCTION[$i]} | sed -e "s/^$prefix//" -e 's/\(.*\)/\L\1/')
+    printf "\nInstall $NAME? [ynq]"
     read ins
     while [ $ins != 'y' ] && [ $ins != 'n' ] && [ $ins != 'q' ]
     do
         echo y - yes
         echo n - no
         echo q - quit
-        echo Install ${PROGRAMS[$i]}?
+        echo Install $NAME?
         read ins
     done
     if [ $ins == 'y' ] || [ $ins == 'Y' ]
@@ -182,7 +160,7 @@ do
         ${FUNCTION[$i]}
     elif [ $ins == 'n' ]
     then
-        echo Skipping ${PROGRAMS[$i]} installation.
+        echo Skipping $NAME installation.
     elif [ $ins == 'q' ]
     then
         echo Quitting installer
