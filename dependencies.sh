@@ -92,7 +92,7 @@ function insHeroku {
     curl https://cli-assets.heroku.com/install.sh | sh
 }
 function insDocker {
-    sudo aptitude install docker docker.io
+    sudo aptitude install docker docker.io docker-compose
     sudo usermod -aG docker $USER
 }
 function insCockpit {
