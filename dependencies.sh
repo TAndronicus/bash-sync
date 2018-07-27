@@ -34,7 +34,7 @@ function insAptitude {
     sudo apt-get install aptitude
 }
 function insCurl {
-    sudo aptitude install curl
+    sudo aptitude install curl wget zip unzip
 }
 function insCCPP {
     sudo aptitude install gcc g++
