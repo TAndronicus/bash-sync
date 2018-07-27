@@ -86,7 +86,7 @@ function insSafeeyes {
     sudo aptitude install safeeyes
 }
 function insVim {
-    sudo vim vim-gtk3
+    sudo aptitude install vim vim-gtk3
 }
 function insHeroku {
     curl https://cli-assets.heroku.com/install.sh | sh
