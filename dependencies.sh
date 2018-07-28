@@ -29,6 +29,7 @@ FUNCTION[25]="insLyx"
 FUNCTION[26]="insStacer"
 FUNCTION[27]="insDVD"
 FUNCTION[28]="insVlc"
+FUNCTION[29]="insChess"
 
 prefix="ins"
 
@@ -150,9 +151,12 @@ function insDVD {
     sudo dpkg-reconfigure libdvd-pkg
 }
 function insVlc {
-    sudo sudo add-apt-repository ppa:videolan/stable-daily
+    sudo add-apt-repository ppa:videolan/stable-daily
     sudo aptitude update
     sudo aptitude install vlc
+}
+function insVlc {
+    sudo aptitude install xboard polyglot stockfish
 }
 
 # Removed
