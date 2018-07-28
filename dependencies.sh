@@ -27,11 +27,12 @@ FUNCTION[23]="insTlpThinkPad"
 FUNCTION[24]="insNotepadqq"
 FUNCTION[25]="insLyx"
 FUNCTION[26]="insStacer"
+FUNCTION[27]="insDVD"
 
 prefix="ins"
 
 function insAptitude {
-    sudo apt-get install aptitude
+    sudo apt-get install aptitude software-properties-common
 }
 function insCurl {
     sudo aptitude install curl wget zip unzip
@@ -63,7 +64,7 @@ function insNvmNode {
     . ~/.bashrc
 }
 function insPostgres {
-    sudo aptitude install postgresql, pgadmin3
+    sudo aptitude install postgresql pgadmin3
 }
 function insYarn {
     curl -o- -L https://yarnpkg.com/install.sh | bash
@@ -142,6 +143,10 @@ function insStacer {
     sudo add-apt-repository ppa:oguzhaninan/stacer
     sudo aptitude update
     sudo aptitude install stacer
+}
+function insDVD {
+    sudo aptitude install libdvd-pkg mint-meta-codecs
+    sudo dpkg-reconfigure libdvd-pkg
 }
 
 # Removed
