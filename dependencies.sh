@@ -155,8 +155,9 @@ function insVlc {
     sudo aptitude update
     sudo aptitude install vlc
 }
-function insVlc {
+function insChess {
     sudo aptitude install xboard polyglot stockfish
+    alias chess='xboard -fUCI -fcp stockfish'
 }
 
 # Removed
