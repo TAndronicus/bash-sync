@@ -30,6 +30,7 @@ FUNCTION[26]="insStacer"
 FUNCTION[27]="insDVD"
 FUNCTION[28]="insVlc"
 FUNCTION[29]="insChess"
+FUNCTION[30]="insZsh"
 
 prefix="ins"
 
@@ -158,6 +159,11 @@ function insVlc {
 function insChess {
     sudo aptitude install xboard polyglot stockfish
     alias chess='xboard -fUCI -fcp stockfish'
+}
+function insZsh {
+    sudo aptitude install zsh
+    chsh -s $(which zsh)
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 }
 
 # Removed
