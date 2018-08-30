@@ -31,6 +31,7 @@ FUNCTION[27]="insDVD"
 FUNCTION[28]="insVlc"
 FUNCTION[29]="insChess"
 FUNCTION[30]="insZsh"
+FUNCTION[31]="insI2p"
 
 prefix="ins"
 
@@ -164,6 +165,11 @@ function insZsh {
     sudo aptitude install zsh
     chsh -s $(which zsh)
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+}
+function insI2p {
+    sudo add-apt-repository ppa:i2p-maintainers/i2p
+    sudo aptitude update
+    sudo aptitude install i2p
 }
 
 # Removed
