@@ -170,6 +170,7 @@ function insI2p {
     sudo add-apt-repository ppa:i2p-maintainers/i2p
     sudo aptitude update
     sudo aptitude install i2p
+    sudo dpkg-reconfigure i2p
 }
 
 # Removed
