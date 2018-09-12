@@ -32,6 +32,7 @@ FUNCTION[28]="insDVD"
 FUNCTION[29]="insVlc"
 FUNCTION[30]="insChess"
 FUNCTION[31]="insI2p"
+FUNCTION[32]="emacs"
 
 prefix="ins"
 
@@ -171,6 +172,9 @@ function insI2p {
     sudo aptitude update
     sudo aptitude install i2p
     sudo dpkg-reconfigure i2p
+}
+function insEmacs {
+    sudo aptitude install emacs25
 }
 
 # Removed
