@@ -27,12 +27,10 @@ FUNCTION[23]="insTlp"
 FUNCTION[24]="insTlpThinkPad"
 FUNCTION[25]="insNotepadqq"
 FUNCTION[26]="insLyx"
-FUNCTION[27]="insStacer"
-FUNCTION[28]="insDVD"
-FUNCTION[29]="insVlc"
-FUNCTION[30]="insChess"
-FUNCTION[31]="insI2p"
-FUNCTION[32]="emacs"
+FUNCTION[27]="insDVD"
+FUNCTION[28]="insVlc"
+FUNCTION[29]="insChess"
+FUNCTION[30]="insI2p"
 
 prefix="ins"
 
@@ -144,11 +142,6 @@ function insLyx {
     sudo aptitude update
     sudo aptitude install lyx
 }
-function insStacer {
-    sudo add-apt-repository ppa:oguzhaninan/stacer
-    sudo aptitude update
-    sudo aptitude install stacer
-}
 function insDVD {
     sudo aptitude install libdvd-pkg mint-meta-codecs
     sudo dpkg-reconfigure libdvd-pkg
@@ -173,18 +166,6 @@ function insI2p {
     sudo aptitude install i2p
     sudo dpkg-reconfigure i2p
 }
-function insEmacs {
-    sudo aptitude install emacs25
-}
-
-# Removed
-function insFuse {
-    sudo aptitude install fuse fuse-emulator-gtk
-}
-function insSnap {
-    sudo aptitude install snapd
-}
-
 
 for ((i=1;i<=${#FUNCTION[@]};i++))
 do
