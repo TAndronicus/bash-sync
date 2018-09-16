@@ -27,6 +27,10 @@ for packages update and follow instructions. Type in "y" if you want to install 
 
 ## How to dockerize it?
 
+## Caution
+
+Dockerfile is no longer maintained, as the only purpose of this repo was to set up my env.
+
 Repo comes with [dockerfile](https://github.com/TAndronicus/bash-sync/blob/master/Dockerfile) for testing [dependencies.sh](https://github.com/TAndronicus/bash-sync/blob/master/dependencies.sh). Run:
 
     docker build -t sync .
