@@ -1,15 +1,12 @@
 #!/bin/bash
 
 declare -a FUNCTION
-FUNCTION[1]="updPip"
-FUNCTION[2]="updYarn"
-FUNCTION[3]="updSdkman"
-FUNCTION[4]="updVim"
-declare -a PROGRAMS
-PROGRAMS[1]="pip"
-PROGRAMS[2]="yarn"
-PROGRAMS[3]="sdkman"
-PROGRAMS[4]="vim"
+FUNCTION+=("updPip")
+FUNCTION+=("updYarn")
+FUNCTION+=("updSdkman")
+FUNCTION+=("updVim")
+
+prefix="upd"
 
 function updPip {
 	pip install --upgrade pip
@@ -27,16 +24,17 @@ function updVim {
     vim +PlugUpdate +qall
 }
 
-for ((i=1;i<=${#PROGRAMS[@]};i++))
+for ((i=0;i<${#FUNCTION[@]};i++))
 do
-    printf "\nUpdate ${PROGRAMS[$i]}? [ynq]"
+    NAME=$(echo ${FUNCTION[$i]} | sed -e "s/^$prefix//" -e 's/\(.*\)/\L\1/')
+    printf "\nUpdate $NAME? [ynq]"
     read ins
     while [ $ins != 'y' ] && [ $ins != 'n' ] && [ $ins != 'q' ]
     do
         echo y - yes
         echo n - no
         echo q - quit
-        echo Update ${PROGRAMS[$i]}?
+        echo Update $NAME?
         read ins
     done
     if [ $ins == 'y' ] || [ $ins == 'Y' ]
@@ -44,7 +42,7 @@ do
         ${FUNCTION[$i]}
     elif [ $ins == 'n' ]
     then
-        echo Skipping ${PROGRAMS[$i]} update.
+        echo Skipping $NAME update.
     elif [ $ins == 'q' ]
     then
         echo Quitting installer
