@@ -4,10 +4,12 @@ declare -a FUNCTION
 FUNCTION[1]="updPip"
 FUNCTION[2]="updYarn"
 FUNCTION[3]="updSdkman"
+FUNCTION[4]="updVim"
 declare -a PROGRAMS
 PROGRAMS[1]="pip"
 PROGRAMS[2]="yarn"
 PROGRAMS[3]="sdkman"
+PROGRAMS[4]="vim"
 
 function updPip {
 	pip install --upgrade pip
@@ -18,6 +20,9 @@ function updYarn {
 }
 function updSdkman {
     eval "sdk update"
+}
+function updVim {
+    vim +PlugUpdate +qall
 }
 
 for ((i=1;i<=${#PROGRAMS[@]};i++))
