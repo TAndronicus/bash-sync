@@ -40,15 +40,20 @@ function insAptitude {
 function insCurl {
     sudo aptitude install curl wget zip unzip
 }
+function insZsh {
+    sudo aptitude install zsh
+    chsh -s $(which zsh)
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+}
 function insCCPP {
     sudo aptitude install gcc g++
 }
 function insPython {
     cd
     curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
-    echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
-    echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bashrc
+    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+    echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+    echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
     sudo aptitude install spyder3
 }
 function insR {
@@ -56,7 +61,7 @@ function insR {
 }
 function insSdkman {
     curl -s "https://get.sdkman.io" | bash
-    . ~/.bashrc
+    . ~/.zshrc
 }
 function insNvmNode {
     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
@@ -64,7 +69,7 @@ function insNvmNode {
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
     nvm install node --lts
-    . ~/.bashrc
+    . ~/.zshrc
 }
 function insPostgres {
     sudo aptitude install postgresql pgadmin3
@@ -154,11 +159,6 @@ function insVlc {
 function insChess {
     sudo aptitude install xboard polyglot stockfish
     alias chess='xboard -fUCI -fcp stockfish'
-}
-function insZsh {
-    sudo aptitude install zsh
-    chsh -s $(which zsh)
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 }
 function insI2p {
     sudo add-apt-repository ppa:i2p-maintainers/i2p
