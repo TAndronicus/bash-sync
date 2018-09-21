@@ -167,7 +167,7 @@ function insI2p {
     sudo dpkg-reconfigure i2p
 }
 
-for ((i=1;i<=${#FUNCTION[@]};i++))
+for ((i=0;i<${#FUNCTION[@]};i++))
 do
     NAME=$(echo ${FUNCTION[$i]} | sed -e "s/^$prefix//" -e 's/\(.*\)/\L\1/')
     printf "\nInstall $NAME? [ynq]"
