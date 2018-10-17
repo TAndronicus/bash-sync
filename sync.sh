@@ -40,9 +40,9 @@ elif [[ $1 = "doktorat" ]]; then
 else
     echo syntax: bash sync.sh catalog -d/u
     echo catalog is one of following:
-    echo ci - classifier integration results
-    echo praca - katalog z dokumentami do pracy
+    echo ci -       classifier integration results
+    echo praca -    katalog z dokumentami do pracy
     echo datasets - bazy danych do klasyfikacji
-    echo mgr - praca magisterska
+    echo mgr -      praca magisterska
     echo doktorat - katalog z dokumentami do doktoratu
 fi
