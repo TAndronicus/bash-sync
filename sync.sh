@@ -7,6 +7,15 @@ if [[ $host == *"P67A"* ]]; then
     DATASETS="/media/jb/145C91ED5C91CA3E/Workspace/Python/Classification/datasets"
     MGR="/media/jb/145C91ED5C91CA3E/Dokumenty/Uczelnia/Praca magisterska"
     DOC="/media/jb/145C91ED5C91CA3E/Dokumenty/Uczelnia/Doktorat"
+elif [[ $host == *"ThinkPad"* ]]; then
+    CI="/home/jb/Workspace/Python/classifier-integration/datasets"
+    WORK="/home/jb/Documents/Praca"
+    DATASETS="/home/jb/Workspace/Python/classifier-integration/results"
+    MGR="/home/jb/Documents/Praca magisterska"
+    DOC="/home/jb/Documents/Doktorat"
+else
+    echo host not configured
+    exit 1
 fi
 
 function syncCi {
