@@ -1,11 +1,13 @@
 #!/bin/bash
 
-CI="/media/jb/145C91ED5C91CA3E/Workspace/Python/Classification/results"
-WORK="/media/jb/145C91ED5C91CA3E/Dokumenty/Praca"
-DATASETS="/media/jb/145C91ED5C91CA3E/Workspace/Python/Classification/datasets"
-MGR="/media/jb/145C91ED5C91CA3E/Dokumenty/Uczelnia/Praca magisterska"
-DOC="/media/jb/145C91ED5C91CA3E/Dokumenty/Uczelnia/Doktorat"
-
+host=$(hostname)
+if [[ $host == *"P67A"* ]]; then
+    CI="/media/jb/145C91ED5C91CA3E/Workspace/Python/Classification/results"
+    WORK="/media/jb/145C91ED5C91CA3E/Dokumenty/Praca"
+    DATASETS="/media/jb/145C91ED5C91CA3E/Workspace/Python/Classification/datasets"
+    MGR="/media/jb/145C91ED5C91CA3E/Dokumenty/Uczelnia/Praca magisterska"
+    DOC="/media/jb/145C91ED5C91CA3E/Dokumenty/Uczelnia/Doktorat"
+fi
 
 function syncCi {
     java -jar /opt/jdrivesync/jdrivesync.jar $2 -r CI -l "$CI"
