@@ -31,6 +31,7 @@ FUNCTION+=("insDVD")
 FUNCTION+=("insVlc")
 FUNCTION+=("insChess")
 FUNCTION+=("insI2p")
+FUNCTION+=("tmux")
 
 prefix="ins"
 
@@ -165,6 +166,9 @@ function insI2p {
     sudo aptitude update
     sudo aptitude install i2p
     sudo dpkg-reconfigure i2p
+}
+function insTmux {
+    sudo aptitude install tmux
 }
 
 for ((i=0;i<${#FUNCTION[@]};i++))
