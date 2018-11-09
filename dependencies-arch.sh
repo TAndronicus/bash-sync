@@ -35,6 +35,7 @@ FUNCTION+=("insVlc")
 FUNCTION+=("insChess")
 FUNCTION+=("insI2p")
 FUNCTION+=("insTmux")
+FUNCTION+=("insFonts")
 
 prefix="ins"
 
@@ -170,6 +171,9 @@ function insI2p {
 }
 function insTmux {
     yaourt -S tmux
+}
+function insFonts {
+    yaourt -S symbola
 }
 
 for ((i=0;i<${#FUNCTION[@]};i++))
