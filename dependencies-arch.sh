@@ -107,7 +107,7 @@ function insJhipster {
     nyi
 }
 function insLatex {
-    yaourt -S texmaker texlive-base texlive texlive-lang-polish texlive-fonts-extra texlive-latex-extra tex-gyre texlive-xetex texlive-math-extra
+    yaourt -S texmaker texstudio texlive-bin texlive-core texlive-latex-extra latex-enumitem
 }
 function insGimp {
     nyi
