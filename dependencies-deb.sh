@@ -31,7 +31,7 @@ FUNCTION+=("insDVD")
 FUNCTION+=("insVlc")
 FUNCTION+=("insChess")
 FUNCTION+=("insI2p")
-FUNCTION+=("tmux")
+FUNCTION+=("insTmux")
 
 prefix="ins"
 
