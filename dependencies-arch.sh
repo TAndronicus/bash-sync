@@ -126,8 +126,8 @@ function insDocker {
     sudo usermod -aG docker $USER
 }
 function insCockpit {
-    yaourt -S cockpit
-    #sudo aptitude install cockpit cockpit-bridge cockpit-dashboard cockpit-docker cockpit-machines cockpit-networkmanager cockpit-ssh cockpit-system cockpit-ws cockpit-storaged
+    sudo groupadd -r stapusr ; sudo groupadd -r stapsys ; sudo groupadd -r stapdev
+    yaourt -S cpio cockpit
 }
 function insErlang {
     nyi
