@@ -128,6 +128,8 @@ function insDocker {
 function insCockpit {
     sudo groupadd -r stapusr ; sudo groupadd -r stapsys ; sudo groupadd -r stapdev
     yaourt -S cpio cockpit
+    sudo systemctl start cockpit
+    sudo systemctl enable cockpit.socket
 }
 function insErlang {
     nyi
