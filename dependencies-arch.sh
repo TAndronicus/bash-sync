@@ -3,7 +3,8 @@
 echo "Prezto & zsh must be set up manually."
 
 declare -a FUNCTION
-FUNCTION+=("insYaourt")
+FUNCTION+=("insYaourtGit")
+FUNCTION+=("insYaourtRepo")
 FUNCTION+=("insZip")
 FUNCTION+=("insChrome")
 FUNCTION+=("insZsh")
@@ -43,7 +44,7 @@ function nyi {
     echo Not yet implemented.
 }
 
-function insYaourt {
+function insYaourtGit {
     cd
     git clone https://aur.archlinux.org/package-query.git
     cd package-query
@@ -54,6 +55,10 @@ function insYaourt {
     makepkg -si
     cd ..
 }
+function insYaourtRepo {
+    sudo echo '[archlinuxfr]' >> /etc/pacman.conf
+    sudo echo 'SigLevel = Never' >> /etc/pacman.conf
+    sudo echo 'Server = http://repo.archlinux.fr/$arch' >> /etc/pacman.conf
 function insZip {
     yaourt -S unzip zip
 }
