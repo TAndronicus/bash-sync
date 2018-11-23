@@ -57,8 +57,9 @@ function insYaourtGit {
 }
 function insYaourtRepo {
     sudo echo '[archlinuxfr]' >> /etc/pacman.conf
-    sudo echo 'SigLevel = Never' >> /etc/pacman.conf
-    sudo echo 'Server = http://repo.archlinux.fr/$arch' >> /etc/pacman.conf
+    sudo echo '  SigLevel = Never' >> /etc/pacman.conf
+    sudo echo '  Server = http://repo.archlinux.fr/$arch' >> /etc/pacman.conf
+}
 function insZip {
     yaourt -S unzip zip
 }
@@ -66,16 +67,12 @@ function insChrome {
     yaourt -S google-chrome
 }
 function insZsh {
-#    zsh
-#    rm ~/.zshrc
-#    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-#    setopt EXTENDED_GLOB
-#    for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-#        ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-#    done
-#    chsh -s /bin/zsh
-#    exit
-    echo Must be installed manually.
+    yaourt -S prezto-git
+    chsh -s /usr/bin/zsh
+    yaourt -S spaceship-prompt-git
+    echo "autoload -U promptinit; promptinit" >> ~/.zshrc
+    echo "prompt spaceship" >> ~/.zshrc
+    source ~/.zshrc
 }
 function insCCPP {
     nyi
