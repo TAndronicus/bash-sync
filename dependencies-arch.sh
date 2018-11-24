@@ -37,6 +37,7 @@ FUNCTION+=("insChess")
 FUNCTION+=("insI2p")
 FUNCTION+=("insTmux")
 FUNCTION+=("insFonts")
+FUNCTION+=("insToolbox")
 
 prefix="ins"
 
@@ -178,6 +179,9 @@ function insTmux {
 }
 function insFonts {
     yaourt -S symbola
+}
+function insToolbox {
+    yaourt -S jetbrains-toolbox
 }
 
 for ((i=0;i<${#FUNCTION[@]};i++))
