@@ -1,49 +1,23 @@
 #!/bin/zsh
 
-echo "Prezto & zsh must be set up manually."
-
 declare -a FUNCTION
 FUNCTION+=("insYaourtGit")
 FUNCTION+=("insYaourtRepo")
 FUNCTION+=("insZip")
 FUNCTION+=("insChrome")
 FUNCTION+=("insZsh")
-#FUNCTION+=("insCCPP")
 FUNCTION+=("insPython")
-#FUNCTION+=("insR")
 FUNCTION+=("insSdkman")
-#FUNCTION+=("insNvmNode")
-#FUNCTION+=("insYarn")
-#FUNCTION+=("insYeoman")
-#FUNCTION+=("insJhipster")
 FUNCTION+=("insLatex")
-#FUNCTION+=("insGimp")
 FUNCTION+=("insSafeeyes")
 FUNCTION+=("insVim")
-#FUNCTION+=("insHeroku")
 FUNCTION+=("insDocker")
 FUNCTION+=("insCockpit")
-#FUNCTION+=("insErlang")
-#FUNCTION+=("insRabbitMQ")
-#FUNCTION+=("insPostgres")
-#FUNCTION+=("insWine")
-#FUNCTION+=("insTlp")
-#FUNCTION+=("insTlpThinkPad")
-#FUNCTION+=("insNotepadqq")
 FUNCTION+=("insLyx")
-FUNCTION+=("insDVD")
-FUNCTION+=("insVlc")
-FUNCTION+=("insChess")
-FUNCTION+=("insI2p")
 FUNCTION+=("insTmux")
-FUNCTION+=("insFonts")
 FUNCTION+=("insToolbox")
 
 prefix="ins"
-
-function nyi {
-    echo Not yet implemented.
-}
 
 function insYaourtGit {
     cd
@@ -75,9 +49,6 @@ function insZsh {
     echo "prompt spaceship" >> ~/.zshrc
     source ~/.zshrc
 }
-function insCCPP {
-    nyi
-}
 function insPython {
     cd
     curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
@@ -87,33 +58,12 @@ function insPython {
     source ~/.zshrc
     yaourt -S spyder3
 }
-function insR {
-    nyi
-}
 function insSdkman {
     curl -s "https://get.sdkman.io" | bash
     . ~/.zshrc
 }
-function insNvmNode {
-    nyi
-}
-function insPostgres {
-    nyi
-}
-function insYarn {
-    nyi
-}
-function insYeoman {
-    nyi
-}
-function insJhipster {
-    nyi
-}
 function insLatex {
     yaourt -S texmaker texstudio texlive-bin texlive-core texlive-latexextra latex-enumitem
-}
-function insGimp {
-    nyi
 }
 function insSafeeyes {
     yaourt -S safeeyes
@@ -121,33 +71,16 @@ function insSafeeyes {
 function insVim {
     yaourt -S vim
 }
-function insHeroku {
-    nyi
-}
 function insDocker {
     yaourt -S docker docker-compose docker-machine
     sudo usermod -aG docker $USER
 }
 function insCockpit {
     sudo groupadd -r stapusr ; sudo groupadd -r stapsys ; sudo groupadd -r stapdev
+    gpg --recv-keys 7E83610126DCC2E8
     yaourt -S cpio cockpit
     sudo systemctl start cockpit
     sudo systemctl enable cockpit.socket
-}
-function insErlang {
-    nyi
-}
-function insRabbitMQ {
-    nyi
-}
-function insWine {
-    nyi
-}
-function insTlp {
-    nyi
-}
-function insTlpThinkPad {
-    nyi
 }
 function insNotepadqq {
     yaourt -S notepadqq
@@ -155,30 +88,8 @@ function insNotepadqq {
 function insLyx {
     yaourt -S lyx
 }
-function insDVD {
-    nyi
-    #sudo aptitude install libdvd-pkg mint-meta-codecs
-    #sudo dpkg-reconfigure libdvd-pkg
-}
-function insVlc {
-    nyi
-    #sudo add-apt-repository ppa:videolan/stable-daily
-    #sudo aptitude update
-    #sudo aptitude install vlc
-}
-function insChess {
-    nyi
-    #sudo aptitude install xboard polyglot stockfish
-    #alias chess='xboard -fUCI -fcp stockfish'
-}
-function insI2p {
-    nyi
-}
 function insTmux {
     yaourt -S tmux
-}
-function insFonts {
-    yaourt -S symbola
 }
 function insToolbox {
     yaourt -S jetbrains-toolbox
