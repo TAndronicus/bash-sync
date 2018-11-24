@@ -109,7 +109,7 @@ function insJhipster {
     nyi
 }
 function insLatex {
-    yaourt -S texmaker texstudio texlive-bin texlive-core texlive-latex-extra latex-enumitem
+    yaourt -S texmaker texstudio texlive-bin texlive-core texlive-latexextra latex-enumitem
 }
 function insGimp {
     nyi
