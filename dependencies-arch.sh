@@ -40,6 +40,7 @@ function insZip {
 }
 function insChrome {
     yaourt -S google-chrome
+    echo "Add --disable-session-crashed-bubble to chrome runner"
 }
 function insZsh {
     yaourt -S prezto-git
@@ -90,6 +91,7 @@ function insLyx {
 }
 function insTmux {
     yaourt -S tmux
+    echo "Add YAKUAKE=true to environment"
 }
 function insToolbox {
     yaourt -S jetbrains-toolbox
