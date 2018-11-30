@@ -11,6 +11,7 @@ FUNCTION+=("insSdkman")
 FUNCTION+=("insLatex")
 FUNCTION+=("insSafeeyes")
 FUNCTION+=("insVim")
+FUNCTION+=("insNvim")
 FUNCTION+=("insDocker")
 FUNCTION+=("insCockpit")
 FUNCTION+=("insLyx")
@@ -70,6 +71,10 @@ function insSafeeyes {
 }
 function insVim {
     yaourt -S vim
+}
+function insNvim {
+    yaourt -S neovim
+    pip3 install --user neovim
 }
 function insDocker {
     yaourt -S docker docker-compose docker-machine
