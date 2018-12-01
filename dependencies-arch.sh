@@ -16,6 +16,7 @@ FUNCTION+=("insCockpit")
 FUNCTION+=("insLyx")
 FUNCTION+=("insTmux")
 FUNCTION+=("insToolbox")
+FUNCTION+=("insRadio")
 
 prefix="ins"
 
@@ -95,6 +96,9 @@ function insTmux {
 }
 function insToolbox {
     yaourt -S jetbrains-toolbox
+}
+function insRadio {
+    yaourt -S curseradio-git
 }
 
 for ((i=0;i<${#FUNCTION[@]};i++))
