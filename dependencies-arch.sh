@@ -17,6 +17,7 @@ FUNCTION+=("insCockpit")
 FUNCTION+=("insLyx")
 FUNCTION+=("insTmux")
 FUNCTION+=("insToolbox")
+FUNCTION+=("insRadio")
 
 prefix="ins"
 
@@ -41,6 +42,7 @@ function insZip {
 }
 function insChrome {
     yaourt -S google-chrome
+    echo "Add --disable-session-crashed-bubble to chrome runner"
 }
 function insZsh {
     yaourt -S prezto-git
@@ -95,9 +97,13 @@ function insLyx {
 }
 function insTmux {
     yaourt -S tmux
+    echo "Add YAKUAKE=true to environment"
 }
 function insToolbox {
     yaourt -S jetbrains-toolbox
+}
+function insRadio {
+    yaourt -S curseradio-git
 }
 
 for ((i=0;i<${#FUNCTION[@]};i++))
