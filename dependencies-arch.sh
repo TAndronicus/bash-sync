@@ -66,7 +66,7 @@ function insSdkman {
     . ~/.zshrc
 }
 function insLatex {
-    yaourt -S texmaker texstudio texlive-bin texlive-core texlive-latexextra latex-enumitem
+    yaourt -S texmaker texstudio texlive-bin texlive-core texlive-latexextra latex-enumitem urw-garamond urw-classico
 }
 function insSafeeyes {
     yaourt -S safeeyes
