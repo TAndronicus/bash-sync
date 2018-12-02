@@ -17,6 +17,7 @@ FUNCTION+=("insCockpit")
 FUNCTION+=("insLyx")
 FUNCTION+=("insTmux")
 FUNCTION+=("insToolbox")
+FUNCTION+=("insPostman")
 FUNCTION+=("insRadio")
 FUNCTION+=("insRSS")
 FUNCTION+=("insJabba")
@@ -103,6 +104,9 @@ function insTmux {
 }
 function insToolbox {
     yaourt -S jetbrains-toolbox
+}
+function insToolbox {
+    yaourt -S postman-bin
 }
 function insRadio {
     yaourt -S curseradio-git
