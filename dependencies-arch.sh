@@ -18,6 +18,7 @@ FUNCTION+=("insLyx")
 FUNCTION+=("insTmux")
 FUNCTION+=("insToolbox")
 FUNCTION+=("insRadio")
+FUNCTION+=("insRSS")
 FUNCTION+=("insJabba")
 
 prefix="ins"
@@ -107,6 +108,9 @@ function insRadio {
     yaourt -S curseradio-git
 }
 function insRadio {
+    yaourt -S feedreader
+}
+function insJabba {
     yaourt -S jabba
 }
 
