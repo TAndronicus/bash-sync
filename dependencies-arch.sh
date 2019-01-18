@@ -21,6 +21,7 @@ FUNCTION+=("insPostman")
 FUNCTION+=("insRadio")
 FUNCTION+=("insRss")
 FUNCTION+=("insJabba")
+FUNCTION+=("insFlameshot")
 
 prefix="ins"
 
@@ -105,7 +106,7 @@ function insTmux {
 function insToolbox {
     yaourt -S jetbrains-toolbox
 }
-function insToolbox {
+function insPostman {
     yaourt -S postman-bin
 }
 function insRadio {
@@ -116,6 +117,9 @@ function insRss {
 }
 function insJabba {
     yaourt -S jabba
+}
+function insFlameshot {
+    yaourt -S flameshot
 }
 
 for ((i=0;i<${#FUNCTION[@]};i++))
