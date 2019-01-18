@@ -19,7 +19,7 @@ FUNCTION+=("insTmux")
 FUNCTION+=("insToolbox")
 FUNCTION+=("insPostman")
 FUNCTION+=("insRadio")
-FUNCTION+=("insRSS")
+FUNCTION+=("insRss")
 FUNCTION+=("insJabba")
 
 prefix="ins"
@@ -69,7 +69,7 @@ function insSdkman {
     . ~/.zshrc
 }
 function insLatex {
-    yaourt -S texmaker texstudio texlive-bin texlive-core texlive-latexextra latex-enumitem urw-garamond urw-classico
+    yaourt -S texmaker texstudio texlive-bin texlive-core texlive-latexextra latex-enumitem texlive-fontsextra
 }
 function insSafeeyes {
     yaourt -S safeeyes
@@ -111,7 +111,7 @@ function insToolbox {
 function insRadio {
     yaourt -S curseradio-git
 }
-function insRadio {
+function insRss {
     yaourt -S feedreader
 }
 function insJabba {
