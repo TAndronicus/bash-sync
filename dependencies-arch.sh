@@ -22,6 +22,7 @@ FUNCTION+=("insRadio")
 FUNCTION+=("insRss")
 FUNCTION+=("insJabba")
 FUNCTION+=("insFlameshot")
+FUNCTION+=("insOsquery")
 
 prefix="ins"
 
@@ -120,6 +121,9 @@ function insJabba {
 }
 function insFlameshot {
     yaourt -S flameshot
+}
+function insOsquery {
+    yaourt -S osquery-git 
 }
 
 for ((i=0;i<${#FUNCTION[@]};i++))
