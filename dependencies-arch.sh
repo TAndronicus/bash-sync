@@ -9,6 +9,7 @@ FUNCTION+=("insZsh")
 FUNCTION+=("insPython")
 FUNCTION+=("insSdkman")
 FUNCTION+=("insLatex")
+FUNCTION+=("insTectonic")
 FUNCTION+=("insSafeeyes")
 FUNCTION+=("insVim")
 FUNCTION+=("insNvim")
@@ -72,6 +73,9 @@ function insSdkman {
 }
 function insLatex {
     yaourt -S texmaker texstudio texlive-bin texlive-core texlive-latexextra latex-enumitem texlive-fontsextra
+}
+function insTectonic {
+    yaourt -S tectonic
 }
 function insSafeeyes {
     yaourt -S safeeyes
