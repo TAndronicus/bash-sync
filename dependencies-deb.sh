@@ -3,7 +3,11 @@
 declare -a FUNCTION
 FUNCTION+=("insAptitude")
 FUNCTION+=("insCurl")
-FUNCTION+=("insZsh")
+FUNCTION+=("insWget")
+FUNCTION+=("insZip")
+FUNCTION+=("insChromestable")
+FUNCTION+=("insChromebeta")
+FUNCTION+=("insOhmyzsh")
 FUNCTION+=("insCCPP")
 FUNCTION+=("insPython")
 FUNCTION+=("insR")
@@ -39,9 +43,24 @@ function insAptitude {
     sudo apt-get install aptitude software-properties-common
 }
 function insCurl {
-    sudo aptitude install curl wget zip unzip
+    sudo aptitude install curl
 }
-function insZsh {
+function insWget {
+    sudo aptitude install wget
+}
+function insZip {
+    sudo aptitude install zip unzip
+}
+function insChromestable {
+    sudo aptitude install google-chrome-stable
+}
+function insChromebeta {
+    wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+    sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+    sudo aptitude update
+    sudo aptitude install google-chrome-beta
+}
+function insOhmyzsh {
     sudo aptitude install zsh
     chsh -s $(which zsh)
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -97,6 +116,9 @@ function insSafeeyes {
 }
 function insVim {
     sudo aptitude install vim vim-gtk3
+}
+function insNeovim {
+    sudo aptitude install neovim
 }
 function insHeroku {
     curl https://cli-assets.heroku.com/install.sh | sh
