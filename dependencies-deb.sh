@@ -3,11 +3,14 @@
 declare -a FUNCTION
 FUNCTION+=("insAptitude")
 FUNCTION+=("insCurl")
+FUNCTION+=("insHttpie")
 FUNCTION+=("insWget")
 FUNCTION+=("insZip")
+FUNCTION+=("insTree")
 FUNCTION+=("insChromestable")
 FUNCTION+=("insChromebeta")
 FUNCTION+=("insOhmyzsh")
+FUNCTION+=("insPrezto")
 FUNCTION+=("insCCPP")
 FUNCTION+=("insPython")
 FUNCTION+=("insR")
@@ -45,11 +48,17 @@ function insAptitude {
 function insCurl {
     sudo aptitude install curl
 }
+function insHttpie {
+    sudo aptitude install httpie
+}
 function insWget {
     sudo aptitude install wget
 }
 function insZip {
     sudo aptitude install zip unzip
+}
+function insTree {
+    sudo aptitude install tree
 }
 function insChromestable {
     sudo aptitude install google-chrome-stable
@@ -64,6 +73,15 @@ function insOhmyzsh {
     sudo aptitude install zsh
     chsh -s $(which zsh)
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+}
+function insPrezto {
+    sudo aptitude install zsh
+    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+    setopt EXTENDED_GLOB
+    zsh "for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+        ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+    done"
+    chsh -s $(which zsh)
 }
 function insCCPP {
     sudo aptitude install gcc g++
