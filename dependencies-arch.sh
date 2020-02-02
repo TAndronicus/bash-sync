@@ -10,7 +10,7 @@ FUNCTION+=("insPython")
 FUNCTION+=("insSdkman")
 FUNCTION+=("insLatex")
 FUNCTION+=("insTectonic")
-FUNCTION+=("insSafeeyes")
+FUNCTION+=("insRsibreak")
 FUNCTION+=("insVim")
 FUNCTION+=("insNvim")
 FUNCTION+=("insDocker")
@@ -23,7 +23,6 @@ FUNCTION+=("insRadio")
 FUNCTION+=("insRss")
 FUNCTION+=("insJabba")
 FUNCTION+=("insFlameshot")
-FUNCTION+=("insOsquery")
 
 prefix="ins"
 
@@ -72,13 +71,13 @@ function insSdkman {
     . ~/.zshrc
 }
 function insLatex {
-    yaourt -S texmaker texstudio texlive-bin texlive-core texlive-latexextra latex-enumitem texlive-fontsextra
+    yaourt -S texmaker texstudio texlive-bin texlive-core texlive-latexextra latex-enumitem texlive-fontsextra texlive-science
 }
 function insTectonic {
     yaourt -S tectonic
 }
-function insSafeeyes {
-    yaourt -S safeeyes
+function insRsibreak {
+    yaourt -S rsibreak 
 }
 function insVim {
     yaourt -S vim
@@ -125,9 +124,6 @@ function insJabba {
 }
 function insFlameshot {
     yaourt -S flameshot
-}
-function insOsquery {
-    yaourt -S osquery-git 
 }
 
 for ((i=0;i<${#FUNCTION[@]};i++))
