@@ -24,6 +24,7 @@ FUNCTION+=("insRadio")
 FUNCTION+=("insRss")
 FUNCTION+=("insJabba")
 FUNCTION+=("insFlameshot")
+FUNCTION+=("insZensu")
 
 prefix="ins"
 
@@ -135,6 +136,9 @@ function insJabba {
 }
 function insFlameshot {
     yay -S flameshot
+}
+function insZensu {
+    yay -S zensu
 }
 
 for ((i=0;i<${#FUNCTION[@]};i++))
