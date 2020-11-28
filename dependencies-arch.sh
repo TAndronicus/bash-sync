@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 declare -a FUNCTION
+FUNCTION+=("insYay")
 FUNCTION+=("insYaourtGit")
 FUNCTION+=("insYaourtRepo")
 FUNCTION+=("insZip")
@@ -37,22 +38,32 @@ function insYaourtGit {
     makepkg -si
     cd ..
 }
+
+function insYay {
+    cd Workspace/Bash
+    pacman -S --needed git base-devel
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si
+    cd
+}
+
 function insYaourtRepo {
     sudo echo '[archlinuxfr]' >> /etc/pacman.conf
     sudo echo '  SigLevel = Never' >> /etc/pacman.conf
     sudo echo '  Server = http://repo.archlinux.fr/$arch' >> /etc/pacman.conf
 }
 function insZip {
-    yaourt -S unzip zip
+    yay -S unzip zip
 }
 function insChrome {
-    yaourt -S google-chrome
+    yay -S google-chrome
     echo "Add --disable-session-crashed-bubble to chrome runner"
 }
 function insZsh {
-    yaourt -S prezto-git
+    yay -S prezto-git
     chsh -s /usr/bin/zsh
-    yaourt -S spaceship-prompt-git
+    yay -S spaceship-prompt-git
     echo "autoload -U promptinit; promptinit" >> ~/.zshrc
     echo "prompt spaceship" >> ~/.zshrc
     source ~/.zshrc
@@ -64,66 +75,66 @@ function insPython {
     echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
     echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
     source ~/.zshrc
-    yaourt -S spyder3
+    yay -S spyder3
 }
 function insSdkman {
     curl -s "https://get.sdkman.io" | bash
     . ~/.zshrc
 }
 function insLatex {
-    yaourt -S texmaker texstudio texlive-bin texlive-core texlive-latexextra latex-enumitem texlive-fontsextra texlive-science
+    yay -S texmaker texstudio texlive-bin texlive-core texlive-latexextra latex-enumitem texlive-fontsextra texlive-science
 }
 function insTectonic {
-    yaourt -S tectonic
+    yay -S tectonic
 }
 function insRsibreak {
-    yaourt -S rsibreak 
+    yay -S rsibreak 
 }
 function insVim {
-    yaourt -S vim
+    yay -S vim
 }
 function insNvim {
-    yaourt -S neovim
+    yay -S neovim
     pip3 install --user neovim
 }
 function insDocker {
-    yaourt -S docker docker-compose docker-machine
+    yay -S docker docker-compose docker-machine
     sudo usermod -aG docker $USER
 }
 function insCockpit {
     sudo groupadd -r stapusr ; sudo groupadd -r stapsys ; sudo groupadd -r stapdev
     gpg --recv-keys 7E83610126DCC2E8
-    yaourt -S cpio cockpit
+    yay -S cpio cockpit
     sudo systemctl start cockpit
     sudo systemctl enable cockpit.socket
 }
 function insNotepadqq {
-    yaourt -S notepadqq
+    yay -S notepadqq
 }
 function insLyx {
-    yaourt -S lyx
+    yay -S lyx
 }
 function insTmux {
-    yaourt -S tmux
+    yay -S tmux
     echo "Add YAKUAKE=true to environment"
 }
 function insToolbox {
-    yaourt -S jetbrains-toolbox
+    yay -S jetbrains-toolbox
 }
 function insPostman {
-    yaourt -S postman-bin
+    yay -S postman-bin
 }
 function insRadio {
-    yaourt -S curseradio-git
+    yay -S curseradio-git
 }
 function insRss {
-    yaourt -S feedreader
+    yay -S feedreader
 }
 function insJabba {
-    yaourt -S jabba
+    yay -S jabba
 }
 function insFlameshot {
-    yaourt -S flameshot
+    yay -S flameshot
 }
 
 for ((i=0;i<${#FUNCTION[@]};i++))
