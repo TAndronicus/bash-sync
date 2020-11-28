@@ -61,6 +61,9 @@ function insChrome {
     yay -S google-chrome
     echo "Add --disable-session-crashed-bubble to chrome runner"
 }
+function insOpera {
+    yay -S opera opera-ffmpeg-codecs
+}
 function insZsh {
     yay -S prezto-git
     chsh -s /usr/bin/zsh
@@ -76,7 +79,6 @@ function insPython {
     echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
     echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
     source ~/.zshrc
-    yay -S spyder3
 }
 function insSdkman {
     curl -s "https://get.sdkman.io" | bash
