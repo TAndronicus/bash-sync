@@ -6,6 +6,7 @@ FUNCTION+=("insYaourtGit")
 FUNCTION+=("insYaourtRepo")
 FUNCTION+=("insZip")
 FUNCTION+=("insChrome")
+FUNCTION+=("insOpera")
 FUNCTION+=("insZsh")
 FUNCTION+=("insPython")
 FUNCTION+=("insSdkman")
@@ -25,6 +26,7 @@ FUNCTION+=("insRss")
 FUNCTION+=("insJabba")
 FUNCTION+=("insFlameshot")
 FUNCTION+=("insZensu")
+FUNCTION+=("insChess")
 
 prefix="ins"
 
@@ -85,7 +87,7 @@ function insSdkman {
     . ~/.zshrc
 }
 function insLatex {
-    yay -S texmaker texstudio texlive-bin texlive-core texlive-latexextra latex-enumitem texlive-fontsextra texlive-science
+    yay -S texlive-bin texlive-core texlive-latexextra latex-enumitem texlive-fontsextra texlive-science
 }
 function insTectonic {
     yay -S tectonic
@@ -141,6 +143,10 @@ function insFlameshot {
 }
 function insZensu {
     yay -S zensu
+}
+function insChess {
+    sudo aptitude install xboard polyglot stockfish
+    alias chess='xboard -fUCI -fcp stockfish'
 }
 
 for ((i=0;i<${#FUNCTION[@]};i++))
