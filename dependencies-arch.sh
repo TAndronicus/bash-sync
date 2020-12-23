@@ -145,8 +145,7 @@ function insZensu {
     yay -S zensu
 }
 function insChess {
-    sudo aptitude install xboard polyglot stockfish
-    alias chess='xboard -fUCI -fcp stockfish'
+    yay -S gnome-chess
 }
 
 for ((i=0;i<${#FUNCTION[@]};i++))
