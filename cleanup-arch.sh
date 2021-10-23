@@ -4,7 +4,8 @@ declare -a FUNCTION
 FUNCTION+=("cleInfo")
 FUNCTION+=("cleConda")
 FUNCTION+=("clePacman")
-FUNCTION+=("cleMaven")
+FUNCTION+=("cleJars")
+FUNCTION+=("cleJetbrains")
 
 prefix="cle"
 
@@ -21,8 +22,10 @@ function clePacman {
     sudo pacman -Rns $(pacman -Qtdq) --noconfirm
     sudo pacman -Sc --noconfirm
     sudo paccache -ruk0
+
+    rm -fvr ~/.cache/yay/*
 }
-function cleMaven {
+function cleJars {
     rm -rfv ~/.ivy2/cache/*
 
     find ~/.sbt ~/.ivy2 -name "*.lock" -print -delete
@@ -36,6 +39,11 @@ function cleMaven {
     rm -fvr ~/.sbt/0.13/target
     rm -fvr ./project/target
     rm -fvr ./project/project/target
+
+    rm -fvr ~/.cache/coursier/v1/https/repo1.maven.org/maven2/*
+}
+function cleJetbrains {
+    rm -fvr ~/.cache/JetBrains/*
 }
 
 for ((i=0;i<${#FUNCTION[@]};i++))
