@@ -6,6 +6,7 @@ FUNCTION+=("cleConda")
 FUNCTION+=("clePacman")
 FUNCTION+=("cleJars")
 FUNCTION+=("cleJetbrains")
+FUNCTION+=("cleCargo")
 
 prefix="cle"
 
@@ -41,9 +42,20 @@ function cleJars {
     rm -fvr ./project/project/target
 
     rm -fvr ~/.cache/coursier/v1/https/repo1.maven.org/maven2/*
+
+    rm -fvr ~/.gradle/caches/*
 }
 function cleJetbrains {
     rm -fvr ~/.cache/JetBrains/*
+
+    git clone https://github.com/TAndronicus/system-tools.git
+    cd system-tools
+    python jetbrains-cleaner.py
+    cd -
+    rm -fvr system-tools
+}
+function cleCargo {
+    rm -fvr ~/.cargo
 }
 
 for ((i=0;i<${#FUNCTION[@]};i++))
