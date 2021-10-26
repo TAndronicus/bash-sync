@@ -46,8 +46,6 @@ function cleJars {
     rm -fvr ~/.gradle/caches/*
 }
 function cleJetbrains {
-    rm -fvr ~/.cache/JetBrains/*
-
     git clone https://github.com/TAndronicus/system-tools.git
     cd system-tools
     python jetbrains-cleaner.py
