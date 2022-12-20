@@ -15,6 +15,7 @@ FUNCTION=(
     "insNvim"
     "insDocker"
     "insTmux"
+    "insTlp"
     )
 
 prefix="ins"
@@ -70,6 +71,9 @@ function insTmux {
     sudo dnf install tmux
     echo "Add YAKUAKE=true to environment"
 }
+function insTlp {
+    sudo dnf install tlp tlp-rdw
+}
 
 for ((i=1;i<=${#FUNCTION[@]};i++))
 do
@@ -96,5 +100,3 @@ do
         exit 0
     fi
 done
-
-}
