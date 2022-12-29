@@ -6,6 +6,7 @@ FUNCTION=(
     "insGit"
     "insCurl"
     "insOpera"
+    "insCodecs"
     "insPython"
     "insSdkman"
     "insLatex"
@@ -32,6 +33,17 @@ function insOpera {
     sudo rpm --import https://rpm.opera.com/rpmrepo.key
     sudo dnf config-manager --add-repo https://rpm.opera.com/rpm
     sudo dnf install opera-stable -y
+}
+function insCodecs {
+    cd
+    sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+    sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
+    sudo dnf install lame\* --exclude=lame-devel
+    sudo dnf group upgrade --with-optional Multimedia
+    git clone https://github.com/TAndronicus/fix-opera-linux-ffmpeg-widevine
+    cd fix-opera-linux-ffmpeg-widevine
+    sudo ./scripts/fix-opera.sh
+    cd .. && rm -rf ./fix-opera-linux-ffmpeg-widevine
 }
 function insPython {
     cd
