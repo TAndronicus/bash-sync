@@ -5,6 +5,7 @@ declare -a FUNCTION
 FUNCTION=(
     "insGit"
     "insCurl"
+    "insSpaceship"
     "insOpera"
     "insCodecs"
     "insOperaCodecs"
@@ -29,6 +30,9 @@ function insGit {
 }
 function insCurl {
 	  sudo dnf install curl
+}
+function insSpaceship {
+    git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 }
 function insOpera {
     sudo rpm --import https://rpm.opera.com/rpmrepo.key
