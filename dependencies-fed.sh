@@ -87,7 +87,9 @@ function insDocker {
     sudo dnf install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 }
 function insTmux {
-    sudo dnf install tmux
+    sudo dnf install tmux xclip
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    echo "Press ctrl+b I in tmux to install tmux plugins"
     echo "Add YAKUAKE=true to environment"
 }
 function insTlp {
