@@ -19,6 +19,7 @@ FUNCTION=(
     "insDocker"
     "insTmux"
     "insTlp"
+    "insBreaktimer"
     )
 
 prefix="ins"
@@ -94,6 +95,9 @@ function insTmux {
 }
 function insTlp {
     sudo dnf install tlp tlp-rdw
+}
+function insBreaktimer {
+    sudo dnf install breaktimer
 }
 
 for ((i=1;i<=${#FUNCTION[@]};i++))
